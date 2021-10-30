@@ -38,7 +38,7 @@ def create_table(csvs_path):
 			bar.next()
 
 	print('\nto db...')
-	big_dataframe.to_sql(csvs_path.split('/')[-1], con=engine, method='multi', chunksize=3000)  # if_exists не заработал
+	big_dataframe.to_sql(csvs_path.split('/')[-1], con=engine)  # if_exists не заработал
 	print('create table time: ', time.time() - create_table_time)
 	return
 
